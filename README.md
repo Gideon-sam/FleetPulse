@@ -1,9 +1,3 @@
-<div align="center">
-
-<img src="banner.png" alt="FleetPulse Banner" width="100%" />
-
-<br/>
-<br/>
 
 # FleetPulse: AI-Powered Real-Time Vehicle Telemetry & Fleet Monitoring Platform
 
