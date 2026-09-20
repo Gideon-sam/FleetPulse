@@ -1,0 +1,150 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* === Base Styling === */
+:root {
+  font-family: 'Outfit', sans-serif;
+  background-color: #000;
+  color: #fff;
+}
+
+/* === Body === */
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+/* === Links === */
+a {
+  color: #00ffff;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+a:hover {
+  color: #5ef9ff;
+}
+
+/* === Inputs & Buttons === */
+input, button {
+  font-family: 'Outfit', sans-serif;
+  outline: none;
+  transition: all 0.2s ease-in-out;
+}
+
+/* === Custom Scrollbar === */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: #222;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #333;
+}
+
+/* === Desktop Styling === */
+/* @media (min-width: 1024px) {
+  body {
+    padding: 2rem;
+  }
+  h1 {
+    font-size: 2.5rem;
+  }
+  input, button {
+    font-size: 1rem;
+  }
+} */
+
+/* ===== Blurred White Bubbles Background ===== */
+.bg-bubbles {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  overflow: hidden;
+  pointer-events: none;
+  opacity: 0.55;
+  mix-blend-mode: screen;
+}
+
+.bg-bubbles .bubble {
+  position: absolute;
+  border-radius: 9999px;
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.95), rgba(255,255,255,0.6) 40%, rgba(255,255,255,0.18) 70%, rgba(255,255,255,0) 100%);
+  filter: blur(32px);
+  transform: translate3d(0,0,0);
+  will-change: transform, opacity;
+  transition: transform 6s cubic-bezier(.2,.8,.2,1), opacity 6s ease;
+}
+
+.bg-bubbles .b1 {
+  width: 420px;
+  height: 420px;
+  left: -8%;
+  top: -6%;
+  opacity: 0.20;
+  animation: floatUpDown 14s ease-in-out infinite;
+}
+
+.bg-bubbles .b2 {
+  width: 300px;
+  height: 300px;
+  right: -6%;
+  top: 4%;
+  opacity: 0.16;
+  animation: floatUpDown 16s ease-in-out 2s infinite;
+}
+
+.bg-bubbles .b3 {
+  width: 220px;
+  height: 220px;
+  left: 12%;
+  bottom: -6%;
+  opacity: 0.12;
+  animation: floatUpDown 18s ease-in-out 1s infinite;
+}
+
+.bg-bubbles .b4 {
+  width: 160px;
+  height: 160px;
+  right: 20%;
+  bottom: -10%;
+  opacity: 0.10;
+  animation: floatUpDown 12s ease-in-out 3s infinite;
+}
+
+.bg-bubbles .b5 {
+  width: 100px;
+  height: 100px;
+  left: 48%;
+  top: 8%;
+  opacity: 0.08;
+  animation: floatUpDown 20s ease-in-out 4s infinite;
+}
+
+@keyframes floatUpDown {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-18px); }
+  100% { transform: translateY(0); }
+}
+
+@media (max-width: 1023px) {
+  .bg-bubbles {
+    opacity: 0.35;
+  }
+  .bg-bubbles .bubble {
+    filter: blur(22px);
+  }
+}
+
+/* === Global Page Blur Layer === */
+.page-blur {
+  position: fixed;
+  inset: 0;
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  background: rgba(255, 255, 255, 0.02);
+  z-index: 5;
+}
